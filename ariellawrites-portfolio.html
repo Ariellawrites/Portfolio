@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ariellawrites | Content & Copywriting</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --cream: #faf7f2;
+    --warm: #f0ebe0;
+    --accent: #c8673a;
+    --sage: #7a9e7e;
+    --soft: #e8e0d5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(250, 247, 242, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--soft);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .nav-links a:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(200,103,58,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3rem 4rem 5rem;
+  }
+
+  .hero-tag {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #555;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    width: fit-content;
+  }
+
+  .hero-cta:hover {
+    background: var(--accent);
+    transform: translateX(4px);
+  }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 5rem 4rem 2rem;
+    position: relative;
+  }
+
+  .hero-card {
+    background: var(--warm);
+    border: 1px solid var(--soft);
+    padding: 3rem;
+    max-width: 380px;
+    width: 100%;
+    position: relative;
+  }
+
+  .hero-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: var(--accent);
+    opacity: 0.15;
+    position: absolute;
+    top: -1rem;
+    left: 1.5rem;
+    line-height: 1;
+  }
+
+  .hero-card-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-card-attribution {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .hero-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--soft);
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .hero-stat-label {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 300;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 7rem 5rem;
+    background: var(--ink);
+    color: var(--cream);
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    color: var(--accent);
+    opacity: 0.8;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: #222;
+    padding: 2.5rem;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover { background: #2a2a2a; }
+
+  .service-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--cream);
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #999;
+    font-weight: 300;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .service-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid #444;
+    padding: 0.25rem 0.6rem;
+    color: #888;
+  }
+
+  /* WORK */
+  .work {
+    padding: 7rem 5rem;
+    background: var(--cream);
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+
+  .work-card {
+    border: 1px solid var(--soft);
+    padding: 2.5rem;
+    background: #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+
+  .work-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 3px;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.4s;
+  }
+
+  .work-card:hover::after { width: 100%; }
+
+  .work-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: var(--warm);
+  }
+
+  .work-type {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  .work-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .work-excerpt {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: #666;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .work-result {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 0.78rem;
+    padding: 0.4rem 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .testimonial-box {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 2rem;
+    position: relative;
+  }
+
+  .testimonial-box::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--accent);
+    opacity: 0.3;
+    position: absolute;
+    top: 0.5rem;
+    left: 1.5rem;
+    line-height: 1;
+  }
+
+  .testimonial-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-client {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* CREDENTIALS */
+  .credentials {
+    padding: 7rem 5rem;
+    background: var(--warm);
+  }
+
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .cred-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+    background: var(--cream);
+    border: 1px solid var(--soft);
+  }
+
+  .cred-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+  }
+
+  .cred-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  .cred-sub {
+    font-size: 0.8rem;
+    color: #777;
+    font-weight: 300;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 7rem 5rem;
+    background: var(--ink);
+    color: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .contact-desc {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #aaa;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--cream);
+    font-size: 0.9rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #333;
+    transition: all 0.3s;
+  }
+
+  .contact-link:hover {
+    border-color: var(--accent);
+    background: rgba(200,103,58,0.08);
+  }
+
+  .contact-link-icon {
+    font-size: 1rem;
+    width: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-link-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #777;
+    margin-left: auto;
+  }
+
+  .contact-right {
+    padding: 3rem;
+    background: #1e1e1e;
+    border: 1px solid #2a2a2a;
+  }
+
+  .contact-right-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+  .specialties {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .specialty {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+    color: #ccc;
+    font-weight: 300;
+  }
+
+  .specialty-line {
+    flex: 1;
+    height: 1px;
+    background: #2a2a2a;
+  }
+
+  .specialty-tag {
+    font-size: 0.75rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 1.5rem 5rem;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-size: 0.78rem;
+    color: #555;
+    font-weight: 300;
+  }
+
+  footer a {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.6s 0.15s ease both; }
+  .hero-subtitle { animation: fadeUp 0.6s 0.25s ease both; }
+  .hero-cta { animation: fadeUp 0.6s 0.35s ease both; }
+  .hero-card { animation: fadeUp 0.6s 0.45s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 2rem; }
+    .hero-right { padding: 2rem 1.5rem 4rem; }
+    .services { padding: 4rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; gap: 1px; }
+    .work { padding: 4rem 1.5rem; }
+    .work-grid { grid-template-columns: 1fr; }
+    .work-card.featured { grid-template-columns: 1fr; }
+    .credentials { padding: 4rem 1.5rem; }
+    .cred-grid { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">ariellawrites</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#credentials">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Content Strategist & Copywriter</div>
+    <h1 class="hero-title">
+      Words that <em>move</em><br>people — and results.
+    </h1>
+    <p class="hero-subtitle">
+      I write content that connects, converts, and carries meaning. From mental health communications to brand copy, I bring clarity, empathy, and strategy to every word.
+    </p>
+    <a href="#contact" class="hero-cta">Work with me →</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <p class="hero-card-text">
+        "I just did ₦250k in one week from the marketing series newsletters you helped me with."
+      </p>
+      <div class="hero-card-attribution">— Client, Small Business Owner · Nigeria</div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">₦250k</span>
+        <span class="hero-stat-label">generated in one week for a client</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2 class="section-title">What I Do</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">✍🏽</span>
+      <div class="service-name">Content Writing</div>
+      <p class="service-desc">Blog articles, educational guides, newsletters, and psychoeducational content that educates and engages. I write for mental health organizations, NGOs, and growing brands.</p>
+      <div class="service-tags">
+        <span class="service-tag">Blog Posts</span>
+        <span class="service-tag">Newsletters</span>
+        <span class="service-tag">Mental Health</span>
+        <span class="service-tag">Education</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📣</span>
+      <div class="service-name">Copywriting & Sales Pages</div>
+      <p class="service-desc">High-converting landing pages, sales copy, and email sequences that blend emotional storytelling with direct-response strategy. Built to drive action.</p>
+      <div class="service-tags">
+        <span class="service-tag">Sales Pages</span>
+        <span class="service-tag">Email Sequences</span>
+        <span class="service-tag">Landing Pages</span>
+        <span class="service-tag">CTAs</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📱</span>
+      <div class="service-name">Social Media Management</div>
+      <p class="service-desc">Content calendars, captions, and strategy for organizations in the mental health and wellness space. Real experience managing Instagram and LinkedIn for a research centre.</p>
+      <div class="service-tags">
+        <span class="service-tag">Captions</span>
+        <span class="service-tag">Calendars</span>
+        <span class="service-tag">Strategy</span>
+        <span class="service-tag">LinkedIn</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Selected Work</h2>
+  </div>
+  <div class="work-grid">
+
+    <!-- Featured -->
+    <div class="work-card featured">
+      <div>
+        <div class="work-type">Educational Content · Client Project</div>
+        <h3 class="work-title">Beginner's Digital Marketing Guide for Nigerian SMEs</h3>
+        <p class="work-excerpt">A multi-part educational series designed to simplify digital marketing for small business owners in Nigeria — written with clarity, warmth, and practical strategy. The client used it to build and launch a newsletter campaign.</p>
+        <div class="work-result">↑ ₦250,000 revenue generated in week one</div>
+      </div>
+      <div class="testimonial-box">
+        <p class="testimonial-quote">"MY AGBA WRITER. I just did ₦250k in one week from the marketing series newsletters you helped me with. U too bad. U sabi your onions die."</p>
+        <div class="testimonial-client">Oluwatobiloba Annie · Client</div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <div class="work-type">Sales Copy · Mock Portfolio Piece</div>
+      <h3 class="work-title">Luminiscent Beauty — "Glow Through What You Go Through"</h3>
+      <p class="work-excerpt">A full sales page for a fictional skincare brand built around healing and resilience. Uses the Hero → Problem → Solution → Proof → CTA framework to position beauty as an act of self-reclamation.</p>
+    </div>
+
+    <div class="work-card">
+      <div class="work-type">Landing Page Copy · Mock Portfolio Piece</div>
+      <h3 class="work-title">FlowTrack — Productivity App Landing Page</h3>
+      <p class="work-excerpt">A high-converting landing page for a fictional productivity app targeting students and startup teams. Combines neuroscience-backed messaging with clean, empathy-led problem framing.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials" id="credentials">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Background & Credentials</h2>
+  </div>
+  <div class="cred-grid">
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-title">Psychology Undergraduate · Obafemi Awolowo University</div>
+        <div class="cred-sub">Specialized focus in developmental psychology, mental health, and child clinical psychology</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-title">Content Volunteer · The Winford Centre for Children & Women</div>
+        <div class="cred-sub">Managing LinkedIn and Instagram content for an inclusive education and neurodiversity research centre</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-title">PRO · Psychife Mental Health First Aid Club</div>
+        <div class="cred-sub">Led full awareness month content calendar (18 posts), sponsorship campaigns, and media committee of five</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-title">TCPS2 Research Ethics Certificate · CORE</div>
+        <div class="cred-sub">Canadian research ethics certification — brings rigor and integrity to all research-adjacent content work</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-title">UNICEF Child Safeguarding Certificate</div>
+        <div class="cred-sub">Trained in ethical communication around children, families, and vulnerable populations</div>
+      </div>
+    </div>
+    <div class="cred-item">
+      <div class="cred-dot"></div>
+      <div>
+        <div class="cred-title">Fort Institute Leadership Development Program · Cohort 6</div>
+        <div class="cred-sub">Modules in ethical leadership, digital presence, writing and rhetoric</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <h2 class="contact-title">Let's create something <em>meaningful</em> together.</h2>
+    <p class="contact-desc">I'm available for remote writing, content, and research support roles — 10 to 20 hours per week. I'm especially drawn to mental health, education, and social impact spaces.</p>
+    <div class="contact-links">
+      <a href="mailto:inkandsoulbyariella@gmail.com" class="contact-link">
+        <span class="contact-link-icon">✉</span>
+        inkandsoulbyariella@gmail.com
+        <span class="contact-link-label">Email</span>
+      </a>
+      <a href="YOUR_LINKEDIN_URL" class="contact-link" target="_blank">
+        <span class="contact-link-icon">in</span>
+        LinkedIn Profile
+        <span class="contact-link-label">Connect</span>
+      </a>
+      <a href="YOUR_SUBSTACK_OR_MEDIUM_URL" class="contact-link" target="_blank">
+        <span class="contact-link-icon">📝</span>
+        Read my writing
+        <span class="contact-link-label">Substack / Medium</span>
+      </a>
+    </div>
+  </div>
+  <div class="contact-right">
+    <div class="contact-right-title">I write well for...</div>
+    <div class="specialties">
+      <div class="specialty">
+        Mental health organizations
+        <span class="specialty-line"></span>
+        <span class="specialty-tag">Core</span>
+      </div>
+      <div class="specialty">
+        NGOs & nonprofits
+        <span class="specialty-line"></span>
+        <span class="specialty-tag">Core</span>
+      </div>
+      <div class="specialty">
+        Wellness & self-care brands
+        <span class="specialty-line"></span>
+        <span class="specialty-tag">Strong fit</span>
+      </div>
+      <div class="specialty">
+        Education & research orgs
+        <span class="specialty-line"></span>
+        <span class="specialty-tag">Strong fit</span>
+      </div>
+      <div class="specialty">
+        Small business owners
+        <span class="specialty-line"></span>
+        <span class="specialty-tag">Proven</span>
+      </div>
+      <div class="specialty">
+        Tech startups & apps
+        <span class="specialty-line"></span>
+        <span class="specialty-tag">Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Ariellawrites · Oluwatamilore Lawal</p>
+  <a href="mailto:inkandsoulbyariella@gmail.com">inkandsoulbyariella@gmail.com</a>
+</footer>
+
+</body>
+</html>
